@@ -1,6 +1,6 @@
 import { NOTFOUND } from 'dns'
 import React from 'react'
-import { Todo } from '../../../typing'
+import { Todo } from '../../../../typing'
 import NotFound from './not-found'
 
 export const dynamicParams = true
@@ -22,7 +22,6 @@ const fetchTodo = async (todoid: string) => {
 
 async function TodoPage({ params: { todoid } }: PageProps) {
   const todo: Todo = await fetchTodo(todoid)
-  console.log('todo.id', todo.id)
 
   if (!todo.id) {
     return <NotFound />
